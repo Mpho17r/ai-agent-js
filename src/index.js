@@ -1,3 +1,4 @@
+// TEST CI
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -22,7 +23,7 @@ app.get('/health', (req, res) => {
 // Start server
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
   });
 }
 

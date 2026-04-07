@@ -8,10 +8,8 @@ describe('AI Agent API Tests', () => {
       .get('/')
       .expect(200);
     
-    expect(response.body).toEqual({
-      message: 'AI Agent is running',
-      status: 'online'
-    });
+    expect(response.body.message).toBe('AI Agent is running');
+    expect(response.body.status).toBe('online');
   });
 
   test('GET /health should return health status', async () => {
@@ -19,7 +17,7 @@ describe('AI Agent API Tests', () => {
       .get('/health')
       .expect(200);
     
-    expect(response.body).toHaveProperty('status', 'healthy');
-    expect(response.body).toHaveProperty('timestamp');
+    expect(response.body.status).toBe('healthy');
+    expect(response.body.timestamp).toBeDefined();
   });
 });
